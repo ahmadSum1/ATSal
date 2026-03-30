@@ -13,7 +13,7 @@ model for 360◦ videos. The attention mechanism explicitly encodes global stati
 
 
 
-Find the extended pre-print version of our work on [arXiv](https://) .
+Find the extended pre-print version of our work on [arXiv](https://arxiv.org/pdf/2011.10600) .
 
 
 
