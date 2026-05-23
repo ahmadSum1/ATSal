@@ -205,6 +205,7 @@ class Sal_based_Attention_module(nn.Module):
         #print('product' ,product.shape)
         added    = x+product
         #print('added' ,added.shape)
+        encoder_att = added.mean(dim=1, keepdim=True)  # (B,1,20,40) — z^c mean across channels
         x = self.decoder(added)
 
         #batch_size_x = x.data.size()[0]
@@ -216,7 +217,7 @@ class Sal_based_Attention_module(nn.Module):
         #print(batch_size_y)
         #spatial_size_y = y.data.size()[2:]
         #print(spatial_size_y)
-        return x ,y # x is a saliency map at this point,y is the fixation map
+        return x, y, encoder_att  # saliency map, attention map, attention-enhanced encoder (eq.2)
 
 
 
